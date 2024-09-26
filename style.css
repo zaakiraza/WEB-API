@@ -1,0 +1,793 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+/* #################### nav #################### */
+
+nav {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#nav_bx {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    padding: 20px 0 10px 0;
+    background-color: #00b26a;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+.nav_items1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.navigation_bar a {
+    font-size: 27px;
+    color: white;
+}
+
+.nav_items1 li a {
+    font-size: 17px;
+    color: white;
+    padding: 33px 8px 30px 4px;
+}
+
+.nav_items1 li a:hover {
+    background-color: white;
+    color: #00b26a;
+}
+
+#nav_bx1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px 7%;
+    background-color: #00b26a;
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    display: none;
+}
+
+#nav_bx1 a {
+    font-size: 27px;
+    color: white;
+}
+
+#nav_items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background-color: #00b571;
+    flex-direction: column;
+    padding: 25px 0px;
+    position: fixed;
+    width: 100%;
+    top: -74%;
+    z-index: 1;
+    height: 87vh;
+    transition: all 1s;
+}
+
+#nav_items li a {
+    font-size: 20px;
+    color: white;
+    padding: 33px 8px 30px 4px;
+}
+
+#nav_bx1 i {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#menu_bar_close {
+    display: none;
+}
+
+i.fa-solid.fa-user {
+    padding-right: 7px;
+}
+
+abbr {
+    text-decoration: none !important;
+    cursor: pointer !important;
+    opacity: 0.6;
+}
+
+/* ########## Section-One ########## */
+
+#sec_one {
+    background-color: #f4f9fc;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.content_one {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.content_one_p1 p {
+    font-size: 18px;
+    padding: 20px 27% 0px 0px;
+}
+
+.content_one_p1 button {
+    padding: 1% 2%;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.content_one_p1 button {
+    margin-top: 33px;
+}
+
+.btn1 {
+    background-color: #00af63;
+    border: 1px solid #00af63;
+    color: white;
+}
+
+.btn1:hover {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+}
+
+.btn2 {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+}
+
+.btn2:hover {
+    background-color: #00af63;
+    border: 1px solid #00af63;
+    color: white;
+}
+
+.content_one_img img {
+    width: 100%;
+}
+
+/* ########## Section-Two ########## */
+
+.content_two {
+    padding: 5% 0;
+}
+
+.hd1 {
+    text-align: center;
+    padding: 0 14%;
+    margin-bottom: 25px;
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bx {
+    width: 250px;
+    height: 8rem;
+    border: 1px solid #9b9fa5;
+    margin: 6px 11px;
+    padding: 9px 13px;
+    border-radius: 13px;
+    display: flex;
+}
+
+.bx:hover {
+    background-color: #00af63;
+    color: white;
+}
+
+.bx h1 {
+    font-size: 20px;
+}
+
+.bx p {
+    color: #9b9fa5;
+    margin: 0;
+    text-align: initial;
+}
+
+.num_bx {
+    width: 14%;
+    height: 29px;
+    text-align: center;
+    margin-right: 16px;
+    background-color: #9b9fa55e;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 15px;
+    padding-top: 4px;
+}
+
+.content_two button {
+    background: transparent;
+    border: 1px solid black;
+    font-weight: 500;
+    border-radius: 10px;
+    margin: 25px auto 0 auto;
+    padding: 10px 20px;
+    display: flex;
+}
+
+
+
+.content_two button:hover {
+    background-color: #00af63;
+    color: white;
+    border: 1px solid white;
+}
+
+
+/* ########## Section-Three ########## */
+
+.sec_three {
+    background-color: #102542;
+    padding: 6% 0;
+}
+
+.content_three {
+    padding: 6% 0px;
+}
+
+.hd2 {
+    text-align: center;
+    color: white;
+    padding: 0px 24%;
+    font-size: 48px;
+}
+
+.bx1 {
+    border: 1px solid white;
+    padding: 2% 0%;
+    margin: 30px 0px;
+    text-align: center;
+}
+
+.bx1 h2 {
+    color: white;
+    font-size: 3rem;
+}
+
+audio {
+    margin: 7px 0px;
+    width: 59%;
+}
+
+.content_three button {
+    margin-top: 25px;
+    background: transparent;
+    border: 1px solid white;
+    font-weight: 500;
+    border-radius: 10px;
+    color: white;
+    padding: 20px 50px;
+}
+
+.content_three button:hover {
+    background: white;
+    color: #102542;
+    border: 1px solid #102542;
+}
+
+/* ########## Footer ########## */
+
+#footer {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #102542;
+    color: white;
+    padding: 30px 0px;
+}
+
+.footer_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.footer_items ul {
+    margin-left: -30px;
+}
+
+.footer_items ul li a {
+    color: white;
+}
+
+.footer_items ul li a:hover {
+    color: #00af63;
+}
+
+.footer_items ul li {
+    line-height: 2;
+    font-size: 20px;
+}
+
+ul.icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 35px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer_items p {
+    padding: 15px 0 0 0;
+}
+
+/* #################### Media Query #################### */
+
+@media only screen and (max-width: 1000px) {
+    #nav_bx {
+        display: none;
+    }
+
+    #nav_bx1 {
+        display: flex;
+    }
+
+    .hd1 {
+        padding: 0 5%;
+    }
+
+    .hd2 {
+        padding: 0px 9%;
+    }
+
+    .footer_content {
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .footer_items ul {
+        display: flex;
+        gap: 40px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .content_one_img {
+        display: none;
+    }
+
+    .content_one_p1 p {
+        padding: 19px 0% 0px 0px;
+    }
+
+    .content_three {
+        padding: 13% 0px 0% 0;
+    }
+
+    .bx1 h2 {
+        font-size: 2rem;
+    }
+
+    audio {
+        width: 90%;
+    }
+
+    #sec_surah {
+        padding: 16% 0 !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .content_three {
+        padding: 17% 0px 0% 0;
+    }
+
+    .hd2 {
+        padding: 0px;
+        font-size: 30px;
+    }
+
+    .footer_items ul {
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    #sec_surah {
+        padding: 20% 0 !important;
+        text-align: start !important;
+    }
+
+    #content_surah input {
+        width: 16rem !important;
+    }
+
+    #content_surah select {
+        width: 8rem !important;
+        padding: 9px 0 !important;
+    }
+
+    .sec_details {
+        padding: 22% 0 2% 0 !important;
+    }
+
+    .content_details input {
+        width: 60% !important;
+    }
+    .sec_translation {
+        padding: 19% 0 10% 0 !important;
+    }
+    .content_translation select {
+        margin: 10px 0;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .content_one {
+        text-align: center;
+    }
+
+    .content_one_p1 h1 {
+        font-size: 22px;
+    }
+
+    .content_one_p1 p {
+        font-size: 13px;
+    }
+
+    .hd1 {
+        padding: 0 0%;
+        font-size: 20px;
+    }
+
+    #nav_bx1 a {
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    #nav_bx1 i {
+        font-size: 25px;
+    }
+
+    .bx {
+        width: 200px;
+    }
+
+    .content_three button {
+        padding: 15px 35px;
+    }
+
+    .content_three {
+        padding: 25% 0px 0% 0;
+    }
+
+    .hd2 {
+        font-size: 29px;
+    }
+
+    .footer_items ul {
+        gap: 0;
+        flex-direction: column;
+    }
+
+    ul.icons {
+        gap: 35px !important;
+        flex-direction: row !important;
+    }
+
+    #sec_surah {
+        padding: 32% 0 !important;
+    }
+
+    #content_surah input {
+        width: 54% !important;
+    }
+
+    #content_surah select {
+        width: 30% !important;
+    }
+
+    .sec_details {
+        padding: 40% 0 2% 0 !important;
+    }
+
+    .content_details input {
+        width: 43% !important;
+    }
+
+    .selector_recitor {
+        flex-direction: column;
+        margin-top: 35px;
+    }
+
+    #surah_recitor {
+        width: 93% !important;
+    }
+
+    #btn_recitor {
+        margin: 0 auto;
+    }
+    .sec_translation {
+        padding: 40% 0 10% 0 !important;
+    }
+}
+
+
+/* audio */
+
+.sec_three {
+    font-family: cursive;
+}
+
+.audios1_down,
+.audios2_down,
+.audios3_down,
+.audios4_down {
+    color: white;
+    cursor: pointer;
+}
+
+
+.audios1,
+.audios2,
+.audios3,
+.audios4 {
+    display: none;
+}
+
+.bx1 i {
+    padding-left: 35px;
+}
+
+.fa-chevron-up,
+.fa-chevron-down {
+    cursor: pointer;
+}
+
+#down_arrow1_up,
+#down_arrow2_up,
+#down_arrow3_up,
+#down_arrow4_up {
+    display: none;
+}
+
+.selector_recitor {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#surah_recitor {
+    padding: 10px 15px;
+    width: 200px;
+    color: white;
+    border: 1px solid white;
+    font-size: 20px;
+    background-color: #032642;
+    border-radius: 11px;
+    outline: none;
+}
+
+#btn_recitor {
+    padding: 12px 20px;
+    outline: none;
+}
+
+#surah_recitor option {
+    background: white;
+    color: #032642;
+}
+
+/* Documentation */
+
+.content_pdf {
+    text-align: center;
+}
+
+#down_arrow5,
+#down_arrow6,
+#down_arrow7,
+#down_arrow8 {
+    display: none;
+}
+
+#down_arrow8_up,
+#down_arrow7_up,
+#down_arrow6_up,
+#down_arrow5_up {
+    position: relative;
+}
+
+
+
+/* Spinner */
+
+.lds-dual-ring,
+.lds-dual-ring:after {
+    box-sizing: border-box;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    color: white;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6.4px solid currentColor;
+    border-color: currentColor transparent currentColor transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* details */
+
+.sec_details {
+    padding: 14% 0 2% 0;
+    background-color: #f4f9fc;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.content_details p {
+    display: inline-block;
+}
+
+.content_details h5 {
+    display: inline-block;
+    padding-bottom: 30px;
+}
+
+.content_details input {
+    width: 33%;
+    padding: 9px 8px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
+}
+
+.btn_same {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+    padding: 9px 3%;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn_same:hover {
+    background-color: #00af63;
+    border-color: transparent;
+    color: white;
+}
+
+
+
+/* Tafir */
+
+#sec_surah {
+    background-color: #f4f9fc;
+    text-align: center;
+    padding: 10% 0;
+    position: relative;
+    z-index: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#sec_surah h1 {
+    text-align: center;
+    padding: 0 0 35px 0;
+    font-size: 49px;
+}
+
+#content_surah input {
+    width: 24rem;
+    padding: 9px 8px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
+}
+
+
+#surahs_here p {
+    text-align: right;
+    letter-spacing: 1px;
+    white-space: break-spaces;
+    line-height: 33px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 26px;
+}
+
+#content_surah select {
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: transparent;
+    width: 12rem;
+    padding: 9px 8px;
+}
+
+audio#myaudios {
+    width: 100%;
+}
+
+/* Translation */
+
+.sec_translation {
+    padding: 12% 0;
+}
+
+.content_translation select {
+    width: 16rem;
+    height: 37px;
+    border-radius: 11px;
+}   
+
+.content_translation button {
+    padding: 5px 38px;
+    border: 1px solid white;
+    background-color: #00b571;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.content_translation button:hover{
+    background-color: white;
+    border: 1px solid #00b571;
+    color: #00b571;
+}
+
+#translation_content {
+    padding-top: 20px;
+}
+
+marquee {
+    position: sticky;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 18px 0;
+    font-size: 25px;
+}
