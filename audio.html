@@ -12,7 +12,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/c681fd371f.js" crossorigin="anonymous"></script>
-  <title>Quran Player || Home</title>
+  <title>Quran Player || Audio</title>
 </head>
 
 <body>
@@ -104,276 +104,31 @@
             <option value="51">Maher</option>
             <option value="53">Muhammad Alhaider</option>
           </select>
-          <button onclick="recitor()" id="btn_recitor">Search</button>
+          <button onclick="(async () => await surah_name())()" id="btn_recitor">Search</button>
         </div>
 
         <div class="audios1_down bx1">
-          <h1>Surah 1-30<i id="down_arrow1" class="fa-solid fa-chevron-down" onclick="toggledown(1)"></i>
-            <i onclick="toggleUp(1)" id="down_arrow1_up" class="fa-solid fa-chevron-up"></i>
-          </h1>
-          <div id="audios1" class="audios1">
-            <div class="lds-dual-ring" id="spinner1"></div>
-            <h2 id="heading1"></h2>
-            <audio id="aud1" controls></audio> <br><br>
-            <div class="lds-dual-ring" id="spinner2"></div>
-            <h2 id="heading2"></h2>
-            <audio id="aud2" controls></audio> <br><br>
-            <div class="lds-dual-ring" id="spinner3"></div>
-            <h2 id="heading3"></h2>
-            <audio id="aud3" controls></audio> <br><br>
-            <div class="lds-dual-ring" id="spinner4"></div>
-            <h2 id="heading4"></h2>
-            <audio id="aud4" controls></audio> <br><br>
-            <h2 id="heading5"></h2>
-            <audio id="aud5" controls></audio> <br><br>
-            <h2 id="heading6"></h2>
-            <audio id="aud6" controls></audio> <br><br>
-            <h2 id="heading7"></h2>
-            <audio id="aud7" controls></audio> <br><br>
-            <h2 id="heading8"></h2>
-            <audio id="aud8" controls></audio> <br><br>
-            <h2 id="heading9"></h2>
-            <audio id="aud9" controls></audio> <br><br>
-            <h2 id="heading10"></h2>
-            <audio id="aud10" controls></audio> <br><br>
-            <h2 id="heading11"></h2>
-            <audio id="aud11" controls></audio> <br><br>
-            <h2 id="heading12"></h2>
-            <audio id="aud12" controls></audio> <br><br>
-            <h2 id="heading13"></h2>
-            <audio id="aud13" controls></audio> <br><br>
-            <h2 id="heading14"></h2>
-            <audio id="aud14" controls></audio> <br><br>
-            <h2 id="heading15"></h2>
-            <audio id="aud15" controls></audio> <br><br>
-            <h2 id="heading16"></h2>
-            <audio id="aud16" controls></audio> <br><br>
-            <h2 id="heading17"></h2>
-            <audio id="aud17" controls></audio> <br><br>
-            <h2 id="heading18"></h2>
-            <audio id="aud18" controls></audio> <br><br>
-            <h2 id="heading19"></h2>
-            <audio id="aud19" controls></audio> <br><br>
-            <h2 id="heading20"></h2>
-            <audio id="aud20" controls></audio> <br><br>
-            <h2 id="heading21"></h2>
-            <audio id="aud21" controls></audio> <br><br>
-            <h2 id="heading22"></h2>
-            <audio id="aud22" controls></audio> <br><br>
-            <h2 id="heading23"></h2>
-            <audio id="aud23" controls></audio> <br><br>
-            <h2 id="heading24"></h2>
-            <audio id="aud24" controls></audio> <br><br>
-            <h2 id="heading25"></h2>
-            <audio id="aud25" controls></audio> <br><br>
-            <h2 id="heading26"></h2>
-            <audio id="aud26" controls></audio> <br><br>
-            <h2 id="heading27"></h2>
-            <audio id="aud27" controls></audio> <br><br>
-            <h2 id="heading28"></h2>
-            <audio id="aud28" controls></audio> <br><br>
-            <h2 id="heading29"></h2>
-            <audio id="aud29" controls></audio> <br><br>
-            <h2 id="heading30"></h2>
-            <audio id="aud30" controls></audio> <br><br>
-          </div>
+          <!-- <h1>Surah 1-30<i id="down_arrow1" class="fa-solid fa-chevron-down" onmouseenter="checkForPointer(1)" onclick="toggledown(1)"></i><i onclick="toggleUp(1)" id="down_arrow1_up" class="fa-solid fa-chevron-up"></i></h1> -->
+          <h1>Surah 1-30<i id="down_arrow1" class="fa-solid fa-chevron-down" onclick="toggledown(1)"></i><i onclick="toggleUp(1)" id="down_arrow1_up" class="fa-solid fa-chevron-up"></i></h1>
+          <div id="audios1" class="audios1"></div>
         </div>
 
         <div class="audios2_down bx1">
-          <h1>Surah 31-60<i id="down_arrow2" class="fa-solid fa-chevron-down" onclick="toggledown(2)"></i>
-            <i onclick="toggleUp(2)" id="down_arrow2_up" class="fa-solid fa-chevron-up"></i>
-          </h1>
-          <div id="audios2" class="audios2">
-            <h2 id="heading31"></h2>
-            <audio id="aud31" controls></audio> <br><br>
-            <h2 id="heading32"></h2>
-            <audio id="aud32" controls></audio> <br><br>
-            <h2 id="heading33"></h2>
-            <audio id="aud33" controls></audio> <br><br>
-            <h2 id="heading34"></h2>
-            <audio id="aud34" controls></audio> <br><br>
-            <h2 id="heading35"></h2>
-            <audio id="aud35" controls></audio> <br><br>
-            <h2 id="heading36"></h2>
-            <audio id="aud36" controls></audio> <br><br>
-            <h2 id="heading37"></h2>
-            <audio id="aud37" controls></audio> <br><br>
-            <h2 id="heading38"></h2>
-            <audio id="aud38" controls></audio> <br><br>
-            <h2 id="heading39"></h2>
-            <audio id="aud39" controls></audio> <br><br>
-            <h2 id="heading40"></h2>
-            <audio id="aud40" controls></audio> <br><br>
-            <h2 id="heading41"></h2>
-            <audio id="aud41" controls></audio> <br><br>
-            <h2 id="heading42"></h2>
-            <audio id="aud42" controls></audio> <br><br>
-            <h2 id="heading43"></h2>
-            <audio id="aud43" controls></audio> <br><br>
-            <h2 id="heading44"></h2>
-            <audio id="aud44" controls></audio> <br><br>
-            <h2 id="heading45"></h2>
-            <audio id="aud45" controls></audio> <br><br>
-            <h2 id="heading46"></h2>
-            <audio id="aud46" controls></audio> <br><br>
-            <h2 id="heading47"></h2>
-            <audio id="aud47" controls></audio> <br><br>
-            <h2 id="heading48"></h2>
-            <audio id="aud48" controls></audio> <br><br>
-            <h2 id="heading49"></h2>
-            <audio id="aud49" controls></audio> <br><br>
-            <h2 id="heading50"></h2>
-            <audio id="aud50" controls></audio> <br><br>
-            <h2 id="heading51"></h2>
-            <audio id="aud51" controls></audio> <br><br>
-            <h2 id="heading52"></h2>
-            <audio id="aud52" controls></audio> <br><br>
-            <h2 id="heading53"></h2>
-            <audio id="aud53" controls></audio> <br><br>
-            <h2 id="heading54"></h2>
-            <audio id="aud54" controls></audio> <br><br>
-            <h2 id="heading55"></h2>
-            <audio id="aud55" controls></audio> <br><br>
-            <h2 id="heading56"></h2>
-            <audio id="aud56" controls></audio> <br><br>
-            <h2 id="heading57"></h2>
-            <audio id="aud57" controls></audio> <br><br>
-            <h2 id="heading58"></h2>
-            <audio id="aud58" controls></audio> <br><br>
-            <h2 id="heading59"></h2>
-            <audio id="aud59" controls></audio> <br><br>
-            <h2 id="heading60"></h2>
-            <audio id="aud60" controls></audio> <br><br>
-          </div>
+          <h1>Surah 31-60<i id="down_arrow2" class="fa-solid fa-chevron-down" onclick="toggledown(2)"></i><i onclick="toggleUp(2)" id="down_arrow2_up" class="fa-solid fa-chevron-up"></i></h1>
+          <div id="audios2" class="audios2"></div>
         </div>
 
         <div class="audios3_down bx1">
-          <h1>Surah 61-90<i id="down_arrow3" class="fa-solid fa-chevron-down" onclick="toggledown(3)"></i>
-            <i onclick="toggleUp(3)" id="down_arrow3_up" class="fa-solid fa-chevron-up"></i>
-          </h1>
-          <div id="audios3" class="audios3">
-            <h2 id="heading61"></h2>
-            <audio id="aud61" controls></audio> <br><br>
-            <h2 id="heading62"></h2>
-            <audio id="aud62" controls></audio> <br><br>
-            <h2 id="heading63"></h2>
-            <audio id="aud63" controls></audio> <br><br>
-            <h2 id="heading64"></h2>
-            <audio id="aud64" controls></audio> <br><br>
-            <h2 id="heading65"></h2>
-            <audio id="aud65" controls></audio> <br><br>
-            <h2 id="heading66"></h2>
-            <audio id="aud66" controls></audio> <br><br>
-            <h2 id="heading67"></h2>
-            <audio id="aud67" controls></audio> <br><br>
-            <h2 id="heading68"></h2>
-            <audio id="aud68" controls></audio> <br><br>
-            <h2 id="heading69"></h2>
-            <audio id="aud69" controls></audio> <br><br>
-            <h2 id="heading70"></h2>
-            <audio id="aud70" controls></audio> <br><br>
-            <h2 id="heading71"></h2>
-            <audio id="aud71" controls></audio> <br><br>
-            <h2 id="heading72"></h2>
-            <audio id="aud72" controls></audio> <br><br>
-            <h2 id="heading73"></h2>
-            <audio id="aud73" controls></audio> <br><br>
-            <h2 id="heading74"></h2>
-            <audio id="aud74" controls></audio> <br><br>
-            <h2 id="heading75"></h2>
-            <audio id="aud75" controls></audio> <br><br>
-            <h2 id="heading76"></h2>
-            <audio id="aud76" controls></audio> <br><br>
-            <h2 id="heading77"></h2>
-            <audio id="aud77" controls></audio> <br><br>
-            <h2 id="heading78"></h2>
-            <audio id="aud78" controls></audio> <br><br>
-            <h2 id="heading79"></h2>
-            <audio id="aud79" controls></audio> <br><br>
-            <h2 id="heading80"></h2>
-            <audio id="aud80" controls></audio> <br><br>
-            <h2 id="heading81"></h2>
-            <audio id="aud81" controls></audio> <br><br>
-            <h2 id="heading82"></h2>
-            <audio id="aud82" controls></audio> <br><br>
-            <h2 id="heading83"></h2>
-            <audio id="aud83" controls></audio> <br><br>
-            <h2 id="heading84"></h2>
-            <audio id="aud84" controls></audio> <br><br>
-            <h2 id="heading85"></h2>
-            <audio id="aud85" controls></audio> <br><br>
-            <h2 id="heading86"></h2>
-            <audio id="aud86" controls></audio> <br><br>
-            <h2 id="heading87"></h2>
-            <audio id="aud87" controls></audio> <br><br>
-            <h2 id="heading88"></h2>
-            <audio id="aud88" controls></audio> <br><br>
-            <h2 id="heading89"></h2>
-            <audio id="aud89" controls></audio> <br><br>
-            <h2 id="heading90"></h2>
-            <audio id="aud90" controls></audio> <br><br>
-          </div>
+          <h1>Surah 61-90<i id="down_arrow3" class="fa-solid fa-chevron-down" onclick="toggledown(3)"></i><i onclick="toggleUp(3)" id="down_arrow3_up" class="fa-solid fa-chevron-up"></i></h1>
+          <div id="audios3" class="audios3"></div>
         </div>
 
         <div class="audios4_down bx1">
-          <h1>Surah 91-114<i id="down_arrow4" class="fa-solid fa-chevron-down" onclick="toggledown(4)"></i>
-            <i onclick="toggleUp(4)" id="down_arrow4_up" class="fa-solid fa-chevron-up"></i>
-          </h1>
-          <div id="audios4" class="audios4">
-            <h2 id="heading91"></h2>
-            <audio id="aud91" controls></audio> <br><br>
-            <h2 id="heading92"></h2>
-            <audio id="aud92" controls></audio> <br><br>
-            <h2 id="heading93"></h2>
-            <audio id="aud93" controls></audio> <br><br>
-            <h2 id="heading94"></h2>
-            <audio id="aud94" controls></audio> <br><br>
-            <h2 id="heading95"></h2>
-            <audio id="aud95" controls></audio> <br><br>
-            <h2 id="heading96"></h2>
-            <audio id="aud96" controls></audio> <br><br>
-            <h2 id="heading97"></h2>
-            <audio id="aud97" controls></audio> <br><br>
-            <h2 id="heading98"></h2>
-            <audio id="aud98" controls></audio> <br><br>
-            <h2 id="heading99"></h2>
-            <audio id="aud99" controls></audio> <br><br>
-            <h2 id="heading100"></h2>
-            <audio id="aud100" controls></audio> <br><br>
-            <h2 id="heading101"></h2>
-            <audio id="aud101" controls></audio> <br><br>
-            <h2 id="heading102"></h2>
-            <audio id="aud102" controls></audio> <br><br>
-            <h2 id="heading103"></h2>
-            <audio id="aud103" controls></audio> <br><br>
-            <h2 id="heading104"></h2>
-            <audio id="aud104" controls></audio> <br><br>
-            <h2 id="heading105"></h2>
-            <audio id="aud105" controls></audio> <br><br>
-            <h2 id="heading106"></h2>
-            <audio id="aud106" controls></audio> <br><br>
-            <h2 id="heading107"></h2>
-            <audio id="aud107" controls></audio> <br><br>
-            <h2 id="heading108"></h2>
-            <audio id="aud108" controls></audio> <br><br>
-            <h2 id="heading109"></h2>
-            <audio id="aud109" controls></audio> <br><br>
-            <h2 id="heading110"></h2>
-            <audio id="aud110" controls></audio> <br><br>
-            <h2 id="heading111"></h2>
-            <audio id="aud111" controls></audio> <br><br>
-            <h2 id="heading112"></h2>
-            <audio id="aud112" controls></audio> <br><br>
-            <h2 id="heading113"></h2>
-            <audio id="aud113" controls></audio> <br><br>
-            <h2 id="heading114"></h2>
-            <audio id="aud114" controls></audio> <br><br>
-            <h2></h2>
-          </div>
+          <h1>Surah 91-114<i id="down_arrow4" class="fa-solid fa-chevron-down" onclick="toggledown(4)"></i><i onclick="toggleUp(4)" id="down_arrow4_up" class="fa-solid fa-chevron-up"></i></h1>
+          <div id="audios4" class="audios4"></div>
         </div>
 
       </div>
-    </div>
     </div>
   </section>
 

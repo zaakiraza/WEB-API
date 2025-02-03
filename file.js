@@ -1,38 +1,97 @@
-// heading & chapter name
+// for stater 5 audios
+async function HomeSurah() {
+    for (let j = 5; j >= 1; j--) {
+        const response1 = await fetch(`https://api.quran.com/api/v4/chapters/${j}`);
+        const feed1 = await response1.json();
+        const response2 = await fetch(`https://api.quran.com/api/v4/chapter_recitations/1/${j}`);
+        const feed2 = await response2.json();
+
+        const hd = document.createElement('h2');
+        hd.setAttribute('id', 'hd${j}');
+        hd.innerText = feed1?.chapter?.name_arabic;
+
+        const ad = document.createElement('audio');
+        ad.setAttribute('id', 'ad${j}');
+        ad.setAttribute('controls', '');
+        ad.setAttribute('src', feed2?.audio_file?.audio_url)
+
+        document.querySelector('#bx1').prepend(hd);
+        document.querySelector('#bx1').prepend(ad);
+    }
+}
+
+{
+    let homeURL = location.href;
+    let path = homeURL.substring(homeURL.lastIndexOf('/') + 1);
+    if (path == 'index.html') {
+        document.querySelector('#fst_link').addEventListener('click', (async () => await HomeSurah())());
+    }
+}
+
+// heading & Audios stater ALL
+let count = 0
 async function surah_name() {
+    count++;
+    let surah_recitor = document.querySelector('#surah_recitor').value;
     for (let j = 1; j <= 114; j++) {
-        const response = await fetch(`https://api.quran.com/api/v4/chapters/${j}`);
-        const feed = await response.json();
-        if (feed) {
-            setTimeout(() => {
-                document.getElementById(`heading${j}`).innerText = feed?.chapter?.name_arabic;
-                document.getElementById(`spinner${j}`).style.display = 'none';
+        const response1 = await fetch(`https://api.quran.com/api/v4/chapters/${j}`);
+        const feed1 = await response1.json();
+        const response2 = await fetch(`https://api.quran.com/api/v4/chapter_recitations/${surah_recitor}/${j}`);
+        const feed2 = await response2.json();
 
-            }, 1000)
-        } else {
-            document.getElementById(`spinner${j}`).style.display = 'block';
+        let audiosMain1 = document.querySelector('#audios1');
+        let audiosMain2 = document.querySelector('#audios2');
+        let audiosMain3 = document.querySelector('#audios3');
+        let audiosMain4 = document.querySelector('#audios4');
+
+        const h2 = document.createElement('h2');
+        h2.setAttribute('id', 'heading${j}');
+        h2.innerText = feed1?.chapter?.name_arabic;
+
+        const audio = document.createElement('audio');
+        audio.setAttribute('id', 'aud${j}');
+        audio.setAttribute('controls', '');
+        audio.setAttribute('src', feed2?.audio_file?.audio_url)
+
+        let img = document.createElement('img');
+        img.setAttribute('src', 'images/loader.gif');
+
+        if (j >= 1 && j <= 30) {
+            if (audio && h2) {
+                audiosMain1.appendChild(h2);
+                audiosMain1.appendChild(audio);
+            }
+            else {
+                audiosMain1.appendChild(img);
+            }
         }
-    }
-}
-surah_name();
-
-
-// Audios
-async function onlyone() {
-    for (let i = 1; i <= 114; i++) {
-        const response = await fetch(`https://api.quran.com/api/v4/chapter_recitations/1/${i}`);
-        const feed = await response.json();
-        document.getElementById(`aud${i}`).setAttribute("src", feed?.audio_file?.audio_url);
-    }
-}
-onlyone();
-
-async function recitor() {
-    let surah_recitor = document.getElementById('surah_recitor').value;
-    for (let i = 1; i <= 114; i++) {
-        const response = await fetch(`https://api.quran.com/api/v4/chapter_recitations/${surah_recitor}/${i}`);
-        const feed = await response.json();
-        document.getElementById(`aud${i}`).setAttribute("src", feed?.audio_file?.audio_url);
+        else if (j >= 31 && j <= 60) {
+            if (audio && h2) {
+                audiosMain2.appendChild(h2);
+                audiosMain2.appendChild(audio);
+            }
+            else {
+                audiosMain2.appendChild(img);
+            }
+        }
+        else if (j >= 61 && j <= 90) {
+            if (audio && h2) {
+                audiosMain3.appendChild(h2);
+                audiosMain3.appendChild(audio);
+            }
+            else {
+                audiosMain3.appendChild(img);
+            }
+        }
+        else if (j >= 91 && j <= 114) {
+            if (audio && h2) {
+                audiosMain4.appendChild(h2);
+                audiosMain4.appendChild(audio);
+            }
+            else {
+                audiosMain4.appendChild(img);
+            }
+        }
     }
 }
 
@@ -51,11 +110,20 @@ document.getElementById('menu_bar_close').addEventListener('click', closemenu = 
 
 
 // Audio toggles
+
+function checkForPointer(a) {
+    if (surah_recitor) {
+        document.getElementById(`down_arrow${a}`).style.cursor = "not-allowed";
+        console.log(a)
+    }
+}
+
 function toggledown(i) {
     document.getElementById(`audios${i}`).style.display = 'block';
     document.getElementById(`down_arrow${i}`).style.display = 'none';
     document.getElementById(`down_arrow${i}_up`).style.display = 'inline';
 }
+
 function toggleUp(i) {
     document.getElementById(`audios${i}`).style.display = 'none';
     document.getElementById(`down_arrow${i}_up`).style.display = 'none';
@@ -64,37 +132,36 @@ function toggleUp(i) {
 
 
 // detail of surah
-async function surah_details() {
-    let input = (document.getElementById("innput").value);
+
+let homeURL2 = location.href;
+let path2 = homeURL2.substring(homeURL2.lastIndexOf('/') + 1);
+if (path2 == 'Details.html') {
+    showSurahName();
+}
+async function showSurahName() {
     for (let i = 1; i <= 114; i++) {
         const response = await fetch(`https://api.quran.com/api/v4/chapters/${i}`);
         const feeds = await response.json();
-        if ((feeds?.chapter?.name_simple) == input) {
-            document.getElementById("wrong").style.display = "none";
-            document.getElementById('displayinfo1').innerHTML = (feeds?.chapter?.name_arabic)
-            document.getElementById('displayinfo2').innerHTML = (feeds?.chapter?.name_simple)
-            document.getElementById('displayinfo3').innerHTML = (feeds?.chapter?.revelation_order)
-            document.getElementById('displayinfo4').innerHTML = (feeds?.chapter?.revelation_place)
-            document.getElementById('displayinfo5').innerHTML = (feeds?.chapter?.verses_count)
-            document.getElementById('displayinfo6').innerHTML = (feeds?.chapter?.translated_name?.name)
-        }
+        let opt = document.createElement('option');
+        opt.value = feeds?.chapter?.id;
+        opt.innerText = `${feeds?.chapter?.name_simple} (${feeds?.chapter?.name_arabic})`;
+        document.getElementById('innput').appendChild(opt);
     }
-    if (input >= 1 && input <= 114) {
-        document.getElementById("wrong").style.display = "none";
-        const response = await fetch(`https://api.quran.com/api/v4/chapters/${input}`);
-        const feed = await response.json();
-        document.getElementById('displayinfo1').innerHTML = (feed?.chapter?.name_arabic)
-        document.getElementById('displayinfo2').innerHTML = (feed?.chapter?.name_simple)
-        document.getElementById('displayinfo3').innerHTML = (feed?.chapter?.revelation_order)
-        document.getElementById('displayinfo4').innerHTML = (feed?.chapter?.revelation_place)
-        document.getElementById('displayinfo5').innerHTML = (feed?.chapter?.verses_count)
-        document.getElementById('displayinfo6').innerHTML = (feed?.chapter?.translated_name?.name)
-    }
-    else {
-        document.getElementById("wrong").innerHTML = "Wrong Input Your Input Must Be From 1 - 114 or write surah name";
-        document.getElementById("wrong").style.color = "red";
-        innput.value = "";
-    }
+}
+
+async function surah_details() {
+
+    let input = (document.getElementById("innput").value);
+    const response = await fetch(`https://api.quran.com/api/v4/chapters/${input}`);
+    const feeds = await response.json();
+    let obj = feeds?.chapter;
+    document.getElementById("wrong").style.display = "none";
+    document.getElementById('displayinfo1').innerHTML = (feeds?.chapter?.name_arabic)
+    document.getElementById('displayinfo2').innerHTML = (feeds?.chapter?.name_simple)
+    document.getElementById('displayinfo3').innerHTML = (feeds?.chapter?.revelation_order)
+    document.getElementById('displayinfo4').innerHTML = (feeds?.chapter?.revelation_place)
+    document.getElementById('displayinfo5').innerHTML = (feeds?.chapter?.verses_count)
+    document.getElementById('displayinfo6').innerHTML = (feeds?.chapter?.translated_name?.name)
 }
 
 
@@ -108,6 +175,8 @@ async function verses() {
     const feed = await response.json();
     let str = feed?.verses[0]?.text_indopak;
     let input_surah = document.getElementById('input_surah').value;
+    const nameSurah = await fetch(`https://api.quran.com/api/v4/chapters/${input_surah}`);
+    const nameSurahResponse = await nameSurah.json();
     if (input_surah >= 1 && input_surah <= 114) {
         const response = await fetch(`https://api.quran.com/api/v4/chapter_recitations/1/${input_surah}`);
         const movies = await response.json();
@@ -117,19 +186,16 @@ async function verses() {
             if (i >= 0 && i <= 1364) {
                 if (input_surah == feed?.verses[i]?.verse_key[0]) {
                     str = str + " " + feed?.verses[i]?.text_indopak;
-                    console.log(feed?.verses[i]?.verse_key)
                 }
             }
             else if (i >= 1366 && i <= 6147) {
                 if (input_surah == feed?.verses[i]?.verse_key[0] + feed?.verses[i]?.verse_key[1]) {
                     str = str + " " + feed?.verses[i]?.text_indopak;
-                    console.log(feed?.verses[i]?.verse_key)
                 }
             }
             else if (i >= 6148) {
                 if (input_surah == feed?.verses[i]?.verse_key[0] + feed?.verses[i]?.verse_key[1] + feed?.verses[i]?.verse_key[2]) {
                     str = str + " " + feed?.verses[i]?.text_indopak;
-                    console.log(feed?.verses[i]?.verse_key)
                 }
             }
         }
@@ -138,7 +204,7 @@ async function verses() {
         let node = document.createTextNode(str)
         para.appendChild(node);
         let heading = document.createElement("h2");
-        let node2 = document.createTextNode(`Surah ${input_surah}:`);
+        let node2 = document.createTextNode(`سُورَة ${nameSurahResponse?.chapter?.name_arabic}`);
         input_surah.value = "";
         heading.appendChild(node2);
         element.appendChild(heading);
@@ -175,40 +241,29 @@ function MyFonts() {
 // Translation
 async function tafeer() {
     let translation_input = document.getElementById('Ask_translation').value;
-    let ask_surah_no = document.getElementById('ask_surah_no').value;
     let translation_content = document.getElementById('translation_content');
     const response = await fetch(`https://api.quran.com/api/v4/quran/translations/${translation_input}`);
     const feed = await response.json();
     let translation_string = "";
+    let arr = feed?.translations;
 
-    if (translation_input == "NULL" || ask_surah_no == "NULL") {
+    if (translation_input == "NULL") {
         translation_content.innerHTML = "Wrong Input Please select the Name from below";
     }
 
-    else if (ask_surah_no == "ALL") {
-        for (let i = 0; i <= 6236; i++) {
-            let abc = feed?.translations[i]?.text;
-            translation_string = translation_string + abc;
-            translation_content.innerHTML = translation_string;
+    for (let i = 0; i <= arr.length; i++) {
+        let abc = feed?.translations[i]?.text;
+        if (!abc) {
+            console.log("loader");
+            translation_content.innerHTML = `<img src="images/loader.gif" alt="">`;
         }
-    }
-
-    else {
-        if (ask_surah_no == 1) {
-            for (let j = 0; j <= 6; j++) {
-                let abc = feed?.translations[j]?.text;
-                translation_string = translation_string + abc;
-                translation_content.innerHTML = translation_string;
-            }
+        else {
+            translation_string = translation_string + "\n" + abc;
         }
-        if (ask_surah_no == 2) {
-            let translation_string = feed?.translations[0]?.text;
-            for (let j = 7; j <= 193; j++) {
-                let abc = feed?.translations[j]?.text;
-                translation_string = translation_string + abc;
-                translation_content.innerHTML = translation_string;
-            }
-        }
+        translation_content.innerHTML = `<img src="images/loader.gif" alt="">`;
+        setTimeout(() => {
+            translation_content.innerText = translation_string;
+        }, 2000);
     }
 }
 
@@ -217,13 +272,23 @@ async function tafeer() {
 async function showtrans() {
     const response = await fetch(`https://api.quran.com/api/v4/resources/translations`);
     const feed = await response.json();
-    for (let i = 0; i <= 125; i++) {
-        document.getElementById(`opt${i}`).innerHTML = feed?.translations[i]?.author_name + "(" + feed?.translations[i]?.language_name + ")";
-        document.getElementById(`opt${i}`).value = feed?.translations[i]?.id;
-    }
-    for (let j = 1; j <= 114; j++) {
-        document.getElementById(`n${j}`).innerHTML = j;
-        document.getElementById(`n${j}`).value = j;
+    let arr = feed?.translations;
+    let itr = 0;
+    let homeURL2 = location.href;
+    let path2 = homeURL2.substring(homeURL2.lastIndexOf('/') + 1);
+    if (path2 == 'translation.html') {
+        arr.forEach((obj) => {
+            let opt = document.createElement('option');
+            opt.value = obj?.id;
+            opt.innerHTML = obj?.author_name + "(" + obj?.language_name + ")";
+            document.getElementById('Ask_translation').appendChild(opt);
+        })
+        arr.forEach((obj) => {
+            let opt = document.createElement('option');
+            opt.value = obj?.id;
+            opt.innerHTML = obj?.author_name + "(" + obj?.language_name + ")";
+            document.getElementById('Ask_translation').appendChild(opt);
+        })
     }
 }
 showtrans();

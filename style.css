@@ -18,6 +18,13 @@ nav {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+#translation_content img {
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
 #nav_bx {
     display: flex;
     align-items: baseline;
@@ -432,9 +439,11 @@ ul.icons {
     .content_details input {
         width: 60% !important;
     }
+
     .sec_translation {
         padding: 19% 0 10% 0 !important;
     }
+
     .content_translation select {
         margin: 10px 0;
     }
@@ -525,6 +534,7 @@ ul.icons {
     #btn_recitor {
         margin: 0 auto;
     }
+
     .sec_translation {
         padding: 40% 0 10% 0 !important;
     }
@@ -674,7 +684,7 @@ ul.icons {
     padding-bottom: 30px;
 }
 
-.content_details input {
+.content_details select {
     width: 33%;
     padding: 9px 8px;
     border-radius: 10px;
@@ -761,7 +771,7 @@ audio#myaudios {
     width: 16rem;
     height: 37px;
     border-radius: 11px;
-}   
+}
 
 .content_translation button {
     padding: 5px 38px;
@@ -772,7 +782,7 @@ audio#myaudios {
     border-radius: 10px;
 }
 
-.content_translation button:hover{
+.content_translation button:hover {
     background-color: white;
     border: 1px solid #00b571;
     color: #00b571;
