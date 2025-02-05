@@ -18,12 +18,12 @@
 <body>
 
     <nav>
-        <div id="nav_bx">
+        <div id="nav_bx" class="s_bx">
             <div class="navigation_bar">
                 <a id="anker" href="index.html">QURAN PLAYER</a>
             </div>
             <ul class="nav_items1">
-                <li><a href="index.html">Home</a></li>
+                <li><a id="fst_link" href="index.html">Home</a></li>
                 <li><a href="audio.html">Audio</a></li>
                 <li><a href="#"><abbr title="Comming Soon">Values</abbr></a></li>
                 <li><a href="tafsir.html">Tafsir</a></li>
@@ -33,13 +33,13 @@
             </ul>
         </div>
 
-        <div id="nav_bx1">
+        <div id="nav_bx1" class="s_bx">
             <a id="anker" href="index.html">QURAN PLAYER</a>
             <i id="menu_bar_open" class="fa-solid fa-bars sec_i"></i>
             <i id="menu_bar_close" class="fa-solid fa-x sec_i"></i>
         </div>
 
-        <ul id="nav_items">
+        <ul id="nav_items" class="s_bx">
             <li><a href="index.html">Home</a></li>
             <li><a href="audio.html">Audio</a></li>
             <li><a href="#"><abbr title="Comming Soon">Values</abbr></a></li>
@@ -53,10 +53,12 @@
     <section class="sec_translation">
         <div class="container">
             <div class="content_translation">
-                <select id="Ask_translation">
-                    <option value="NULL">-- Select --</option>
-                </select>
-                <button onclick="tafeer()">Show</button>
+                <div class="cont">
+                    <select id="Ask_translation">
+                        <option value="NULL">-- Select --</option>
+                    </select>
+                    <button onclick="tafeer()">Show</button>
+                </div>
                 <p id="translation_content"></p>
             </div>
         </div>

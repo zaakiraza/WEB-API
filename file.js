@@ -13,10 +13,9 @@ async function HomeSurah() {
         const ad = document.createElement('audio');
         ad.setAttribute('id', 'ad${j}');
         ad.setAttribute('controls', '');
-        ad.setAttribute('src', feed2?.audio_file?.audio_url)
-
-        document.querySelector('#bx1').prepend(hd);
+        ad.setAttribute('src', feed2?.audio_file?.audio_url);
         document.querySelector('#bx1').prepend(ad);
+        document.querySelector('#bx1').prepend(hd);
     }
 }
 
@@ -30,9 +29,10 @@ async function HomeSurah() {
 
 // heading & Audios stater ALL
 let count = 0
+let surah_recitor = document.querySelector('#surah_recitor').value;
 async function surah_name() {
     count++;
-    let surah_recitor = document.querySelector('#surah_recitor').value;
+    surah_recitor = document.querySelector('#surah_recitor').value;
     for (let j = 1; j <= 114; j++) {
         const response1 = await fetch(`https://api.quran.com/api/v4/chapters/${j}`);
         const feed1 = await response1.json();
@@ -98,23 +98,27 @@ async function surah_name() {
 
 // Nav Bar
 document.getElementById('menu_bar_open').addEventListener('click', openmenu = () => {
-    document.getElementById('nav_items').style.top = "13%";
+    document.getElementById('nav_items').style.top = "19%";
     document.getElementById('menu_bar_close').style.display = "flex";
     document.getElementById('menu_bar_open').style.display = "none";
+    document.getElementById('nav_items').style.zIndex = "1";
 })
 document.getElementById('menu_bar_close').addEventListener('click', closemenu = () => {
-    document.getElementById('nav_items').style.top = "-74%";
+    document.getElementById('nav_items').style.top = "-60%";
     document.getElementById('menu_bar_open').style.display = "flex";
     document.getElementById('menu_bar_close').style.display = "none";
+    document.getElementById('nav_items').style.zIndex = "-1";
 })
 
 
 // Audio toggles
 
 function checkForPointer(a) {
-    if (surah_recitor) {
-        document.getElementById(`down_arrow${a}`).style.cursor = "not-allowed";
-        console.log(a)
+    if (surah_recitor != "null") {
+        document.getElementById(`down_arrow${a}`).style.cursor = "pointer !important";
+    }
+    else {
+        document.getElementById(`down_arrow${a}`).style.cursor = "not-allowed !important";
     }
 }
 

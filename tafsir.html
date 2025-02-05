@@ -18,12 +18,12 @@
 <body>
 
     <nav>
-        <div id="nav_bx">
+        <div id="nav_bx" class="s_bx">
             <div class="navigation_bar">
                 <a id="anker" href="index.html">QURAN PLAYER</a>
             </div>
             <ul class="nav_items1">
-                <li><a href="index.html">Home</a></li>
+                <li><a id="fst_link" href="index.html">Home</a></li>
                 <li><a href="audio.html">Audio</a></li>
                 <li><a href="#"><abbr title="Comming Soon">Values</abbr></a></li>
                 <li><a href="tafsir.html">Tafsir</a></li>
@@ -33,13 +33,13 @@
             </ul>
         </div>
 
-        <div id="nav_bx1">
+        <div id="nav_bx1" class="s_bx">
             <a id="anker" href="index.html">QURAN PLAYER</a>
             <i id="menu_bar_open" class="fa-solid fa-bars sec_i"></i>
             <i id="menu_bar_close" class="fa-solid fa-x sec_i"></i>
         </div>
 
-        <ul id="nav_items">
+        <ul id="nav_items" class="s_bx">
             <li><a href="index.html">Home</a></li>
             <li><a href="audio.html">Audio</a></li>
             <li><a href="#"><abbr title="Comming Soon">Values</abbr></a></li>
@@ -54,33 +54,35 @@
         <div class="container">
             <div id="content_surah">
                 <h1>Recitations</h1>
-                <input type="text" id="input_surah" placeholder="Enter Surah Number*" value="" required/>
-                <button onclick="verses()" class="btn_same">Click</button><br />
-                <br />
-                <select name="font_size" id="font_size">
-                    <option value="16px">- - Font-size - -</option>
-                    <option value="20px">20 px</option>
-                    <option value="24px">24 px</option>
-                    <option value="28px">28 px</option>
-                    <option value="32px">32 px</option>
-                    <option value="36px">36 px</option>
-                    <option value="40px">40 px</option>
-                </select>
-                <select name="font_style" id="font_style">
-                    <option value="font_style">- - Font Style - -</option>
-                    <option value="system-ui">system-ui</option>
-                    <option value="math">math</option>
-                    <option value="monospace">monospace</option>
-                    <option value="Noto Naskh Arabic">Noto Naskh Arabic</option>
-                    <option value="Amiri">Amiri</option>
-                    <option value="Lateef">Lateef</option>
-                    <option value="Rubik">Rubik</option>
-                    <option value="Cairo">Cairo</option>
-                    <option value="IBM Plex Sans Arabic">IBM Plex Sans Arabic</option>
-                    <option value="sans-serif">sans-serif</option>
-                </select>
-                <button onclick="MyFonts()" class="btn_same">Go</button>
-                <br /><br />
+                <div class="cont">
+                    <input type="text" id="input_surah" placeholder="Enter Surah Number*" value="" required />
+                    <button onclick="verses()" class="btn_same">Click</button>
+                </div>
+                <div class="cont">
+                    <select name="font_size" id="font_size">
+                        <option value="16px">- - Font-size - -</option>
+                        <option value="20px">20 px</option>
+                        <option value="24px">24 px</option>
+                        <option value="28px">28 px</option>
+                        <option value="32px">32 px</option>
+                        <option value="36px">36 px</option>
+                        <option value="40px">40 px</option>
+                    </select>
+                    <select name="font_style" id="font_style">
+                        <option value="font_style">- - Font Style - -</option>
+                        <option value="system-ui">system-ui</option>
+                        <option value="math">math</option>
+                        <option value="monospace">monospace</option>
+                        <option value="Noto Naskh Arabic">Noto Naskh Arabic</option>
+                        <option value="Amiri">Amiri</option>
+                        <option value="Lateef">Lateef</option>
+                        <option value="Rubik">Rubik</option>
+                        <option value="Cairo">Cairo</option>
+                        <option value="IBM Plex Sans Arabic">IBM Plex Sans Arabic</option>
+                        <option value="sans-serif">sans-serif</option>
+                    </select>
+                    <button onclick="MyFonts()" class="btn_same">Go</button>
+                </div>
                 <audio id="myaudios" controls></audio>
                 <div id="surahs_here">
                     <h2></h2>
