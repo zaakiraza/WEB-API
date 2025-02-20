@@ -29,69 +29,75 @@ async function HomeSurah() {
 
 // heading & Audios stater ALL
 let count = 0
-let surah_recitor = document.querySelector('#surah_recitor').value;
+let surah_recitor;
 async function surah_name() {
-    count++;
-    surah_recitor = document.querySelector('#surah_recitor').value;
-    for (let j = 1; j <= 114; j++) {
-        const response1 = await fetch(`https://api.quran.com/api/v4/chapters/${j}`);
-        const feed1 = await response1.json();
-        const response2 = await fetch(`https://api.quran.com/api/v4/chapter_recitations/${surah_recitor}/${j}`);
-        const feed2 = await response2.json();
+    try {
+        surah_recitor = document.querySelector('#surah_recitor').value
+        count++;
+        surah_recitor = document.querySelector('#surah_recitor').value;
+        for (let j = 1; j <= 114; j++) {
+            const response1 = await fetch(`https://api.quran.com/api/v4/chapters/${j}`);
+            const feed1 = await response1.json();
+            const response2 = await fetch(`https://api.quran.com/api/v4/chapter_recitations/${surah_recitor}/${j}`);
+            const feed2 = await response2.json();
 
-        let audiosMain1 = document.querySelector('#audios1');
-        let audiosMain2 = document.querySelector('#audios2');
-        let audiosMain3 = document.querySelector('#audios3');
-        let audiosMain4 = document.querySelector('#audios4');
+            let audiosMain1 = document.querySelector('#audios1');
+            let audiosMain2 = document.querySelector('#audios2');
+            let audiosMain3 = document.querySelector('#audios3');
+            let audiosMain4 = document.querySelector('#audios4');
 
-        const h2 = document.createElement('h2');
-        h2.setAttribute('id', 'heading${j}');
-        h2.innerText = feed1?.chapter?.name_arabic;
+            const h2 = document.createElement('h2');
+            h2.setAttribute('id', 'heading${j}');
+            h2.innerText = feed1?.chapter?.name_arabic;
 
-        const audio = document.createElement('audio');
-        audio.setAttribute('id', 'aud${j}');
-        audio.setAttribute('controls', '');
-        audio.setAttribute('src', feed2?.audio_file?.audio_url)
+            const audio = document.createElement('audio');
+            audio.setAttribute('id', 'aud${j}');
+            audio.setAttribute('controls', '');
+            audio.setAttribute('src', feed2?.audio_file?.audio_url)
 
-        let img = document.createElement('img');
-        img.setAttribute('src', 'images/loader.gif');
+            let img = document.createElement('img');
+            img.setAttribute('src', 'images/loader.gif');
 
-        if (j >= 1 && j <= 30) {
-            if (audio && h2) {
-                audiosMain1.appendChild(h2);
-                audiosMain1.appendChild(audio);
+            if (j >= 1 && j <= 30) {
+                if (audio && h2) {
+                    audiosMain1.appendChild(h2);
+                    audiosMain1.appendChild(audio);
+                }
+                else {
+                    audiosMain1.appendChild(img);
+                }
             }
-            else {
-                audiosMain1.appendChild(img);
+            else if (j >= 31 && j <= 60) {
+                if (audio && h2) {
+                    audiosMain2.appendChild(h2);
+                    audiosMain2.appendChild(audio);
+                }
+                else {
+                    audiosMain2.appendChild(img);
+                }
+            }
+            else if (j >= 61 && j <= 90) {
+                if (audio && h2) {
+                    audiosMain3.appendChild(h2);
+                    audiosMain3.appendChild(audio);
+                }
+                else {
+                    audiosMain3.appendChild(img);
+                }
+            }
+            else if (j >= 91 && j <= 114) {
+                if (audio && h2) {
+                    audiosMain4.appendChild(h2);
+                    audiosMain4.appendChild(audio);
+                }
+                else {
+                    audiosMain4.appendChild(img);
+                }
             }
         }
-        else if (j >= 31 && j <= 60) {
-            if (audio && h2) {
-                audiosMain2.appendChild(h2);
-                audiosMain2.appendChild(audio);
-            }
-            else {
-                audiosMain2.appendChild(img);
-            }
-        }
-        else if (j >= 61 && j <= 90) {
-            if (audio && h2) {
-                audiosMain3.appendChild(h2);
-                audiosMain3.appendChild(audio);
-            }
-            else {
-                audiosMain3.appendChild(img);
-            }
-        }
-        else if (j >= 91 && j <= 114) {
-            if (audio && h2) {
-                audiosMain4.appendChild(h2);
-                audiosMain4.appendChild(audio);
-            }
-            else {
-                audiosMain4.appendChild(img);
-            }
-        }
+    }
+    catch(e){
+        console.log(error);
     }
 }
 
